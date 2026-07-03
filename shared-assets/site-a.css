@@ -109,23 +109,34 @@ button.link-plain { background: none; border: none; padding: 0; margin: 0; text-
 
 main { padding-top: 73px; }
 
-/* HERO CINEMATOGRAFICO FULL-BLEED (mecanica Nelore/Stitch modelo_1) */
+/* HERO CINEMATOGRAFICO (mecanica Nelore/Stitch modelo_1, video em janela retrato) */
 .hero-cinematic {
   position: relative; min-height: 92vh; display: flex; align-items: center;
   overflow: hidden; padding: var(--space-2xl) 0;
 }
-@media (max-width: 480px) { .hero-cinematic { min-height: 78vh; padding: var(--space-xl) 0 var(--space-lg); } }
+@media (max-width: 1023px) { .hero-cinematic { flex-direction: column; justify-content: center; min-height: unset; padding: var(--space-xl) 0 var(--space-lg); } }
+@media (max-width: 480px) { .hero-cinematic { padding: var(--space-lg) 0 var(--space-md); } }
 .hero-media-bleed { position: absolute; inset: 0; z-index: 0; }
-.hero-media-bleed video, .hero-media-bleed img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
-.hero-media-bleed video { opacity: 0; transition: opacity var(--motion-slow) var(--ease); }
-.hero-media-bleed video.video-ready { opacity: 1; }
+.hero-media-bleed img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; filter: brightness(0.55) saturate(0.85); }
 .hero-gradient-overlay {
   position: absolute; inset: 0; z-index: 1;
   background: linear-gradient(90deg, var(--bg) 0%, rgba(20,19,20,0.88) 38%, rgba(20,19,20,0.35) 65%, transparent 100%);
 }
 @media (max-width: 767px) {
-  .hero-gradient-overlay { background: linear-gradient(to top, var(--bg) 15%, rgba(20,19,20,0.75) 55%, rgba(20,19,20,0.25) 80%, transparent 100%); }
+  .hero-gradient-overlay { background: linear-gradient(to top, var(--bg) 25%, rgba(20,19,20,0.55) 60%, rgba(20,19,20,0.2) 85%, transparent 100%); }
 }
+/* Janela de video em formato retrato, integrada ao hero (nao um crop forcado de video vertical em fundo paisagem) */
+.hero-video-frame {
+  position: absolute; z-index: 1; top: 50%; right: var(--margin-desktop); transform: translateY(-50%);
+  height: 82%; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 2px;
+  border: 1px solid rgba(179,147,89,0.4); box-shadow: 0 40px 90px rgba(0,0,0,0.6);
+}
+.hero-video-frame video { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; opacity: 0; transition: opacity var(--motion-slow) var(--ease); }
+.hero-video-frame video.video-ready { opacity: 1; }
+@media (max-width: 1023px) {
+  .hero-video-frame { position: relative; top: auto; right: auto; transform: none; height: 46vh; margin: var(--space-lg) auto 0; width: min(78vw, 320px); }
+}
+@media (max-width: 480px) { .hero-video-frame { height: 40vh; margin-top: var(--space-md); } }
 .hero-content { position: relative; z-index: 2; max-width: var(--container-max); margin: 0 auto; padding: 0 var(--margin-mobile); width: 100%; }
 @media (min-width: 1024px) { .hero-content { padding: 0 var(--margin-desktop); } }
 .hero-inner { max-width: 640px; }

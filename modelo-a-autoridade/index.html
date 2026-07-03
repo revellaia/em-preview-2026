@@ -51,7 +51,7 @@
 
 <main id="conteudo-principal">
 
-  <!-- 1. HERO CINEMATOGRAFICO FULL-BLEED (video como midia dominante) -->
+  <!-- 1. HERO CINEMATOGRAFICO (video em formato retrato, integrado ao hero, full-bleed no mobile) -->
   <section class="hero-cinematic">
     <div class="hero-media-bleed">
       <picture>
@@ -59,9 +59,11 @@
         <source srcset="../shared-assets/edgar/edgar-hero-authority-bw-desktop.webp" type="image/webp">
         <img src="../shared-assets/edgar/edgar-hero-authority-bw-desktop.jpg" alt="Edgar Mondadori, advogado e diretor da Mondadori Advocacia, retrato editorial em preto e branco" fetchpriority="high">
       </picture>
-      <video data-hero-video data-src-desktop="../shared-assets/edgar/edgar-hero-video-desktop.mp4" data-src-mobile="../shared-assets/edgar/edgar-hero-video-mobile.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
     </div>
     <div class="hero-gradient-overlay" aria-hidden="true"></div>
+    <div class="hero-video-frame">
+      <video data-hero-video data-src-desktop="../shared-assets/edgar/edgar-hero-video-desktop.mp4" data-src-mobile="../shared-assets/edgar/edgar-hero-video-mobile.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
+    </div>
     <div class="hero-content">
       <div class="hero-inner">
         <div class="hero-line" aria-hidden="true"></div>
