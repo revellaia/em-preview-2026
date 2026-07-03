@@ -208,7 +208,6 @@ main { padding-top: 73px; }
 .icon-inline { margin: 0; color: var(--gold-aged); font-size: 1.5rem; }
 
 .cta-boxed { border: 1px solid var(--outline); padding: var(--space-xl); text-align: center; max-width: 640px; margin: 0 auto; }
-.cta-boxed .icon { color: var(--gold-aged); font-size: 1.75rem; margin-bottom: var(--space-sm); }
 .cta-boxed .disclaimer { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-soft); margin-top: var(--space-lg); }
 
 footer { background: var(--ink); color: var(--paper); padding: var(--space-2xl) 0 var(--space-lg); }
