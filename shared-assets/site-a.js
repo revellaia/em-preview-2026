@@ -99,7 +99,6 @@
     source.type = 'video/mp4';
     video.appendChild(source);
     video.load();
-    video.addEventListener('canplay', function () { video.classList.add('video-ready'); }, { once: true });
     var p = video.play();
     if (p && typeof p.catch === 'function') p.catch(function () { /* autoplay bloqueado: still permanece visivel */ });
   }

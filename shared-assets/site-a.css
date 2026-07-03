@@ -131,8 +131,7 @@ main { padding-top: 73px; }
   height: 82%; aspect-ratio: 9 / 16; overflow: hidden; border-radius: 2px;
   border: 1px solid rgba(179,147,89,0.4); box-shadow: 0 40px 90px rgba(0,0,0,0.6);
 }
-.hero-video-frame video { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; opacity: 0; transition: opacity var(--motion-slow) var(--ease); }
-.hero-video-frame video.video-ready { opacity: 1; }
+.hero-video-frame video { width: 100%; height: 100%; object-fit: cover; object-position: center 15%; background: var(--bg-lowest); }
 @media (max-width: 1023px) {
   .hero-video-frame { position: relative; top: auto; right: auto; transform: none; height: 46vh; margin: var(--space-lg) auto 0; width: min(78vw, 320px); }
 }
