@@ -13,19 +13,19 @@
 <meta property="og:locale" content="pt_BR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../shared-assets/site.css">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared-assets/site-b.css">
 </head>
 <body>
-<div id="scroll-progress" aria-hidden="true"></div>
+<script>document.documentElement.className += ' reveal-ready';</script>
+<noscript><style>[data-reveal]{opacity:1 !important;transform:none !important;}</style></noscript>
+<div class="gradient-bar gradient-bar-fixed" aria-hidden="true"></div>
 <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
 
 <nav class="nav">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <span class="monogram" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 40 40" fill="none"><path d="M5 32V8L20 24L35 8V32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><rect x="17" y="21" width="6" height="6" transform="rotate(45 20 24)" fill="currentColor"/></svg>
-      </span>
+      <span class="monogram" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 40 40" fill="none"><path d="M5 32V8L20 24L35 8V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
       Mondadori
     </a>
     <div class="nav-links">
@@ -53,176 +53,165 @@
 
 <main id="conteudo-principal">
 
-  <!-- 1. HERO INSTITUCIONAL (sem retrato dominante) -->
-  <section class="hero-institutional texture-linen">
-    <video class="hero-video-ambient" data-hero-video data-src-desktop="../shared-assets/edgar/edgar-hero-video-desktop.mp4" data-src-mobile="../shared-assets/edgar/edgar-hero-video-mobile.mp4" muted loop playsinline preload="none" aria-hidden="true"></video>
-    <div class="grid-lines" aria-hidden="true"></div>
-    <div class="monogram-watermark" aria-hidden="true">
-      <svg viewBox="0 0 40 40" fill="none"><path d="M5 32V8L20 24L35 8V32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </div>
-    <div class="hero-institutional-inner">
-      <div>
+  <!-- 01. HERO EDITORIAL (split, zoom respirando, cartao de identidade, rotulo lateral) -->
+  <section class="hero-editorial">
+    <div class="hero-editorial-grid">
+      <div class="hero-editorial-copy">
+        <div class="section-number"><span class="num">01</span><span class="label">Mondadori Advocacia</span></div>
         <span class="eyebrow">Inteligência Jurídica Estratégica</span>
-        <h1 class="display-lg mt-sm">Estratégia jurídica para empresas, produtores e patrimônios em movimento.</h1>
-        <p class="body-lg max-w-md mt-md">Uma atuação consultiva, preventiva e contenciosa para negócios que exigem análise, direção e responsabilidade.</p>
-        <div class="hero-ctas mt-lg">
+        <h1 class="display-lg mt-sm">Estratégia jurídica para empresas, produtores e <em>patrimônios</em> em movimento.</h1>
+        <p class="body-lg">Uma atuação consultiva, preventiva e contenciosa para negócios que exigem análise, direção e responsabilidade.</p>
+        <div class="hero-ctas">
           <button type="button" class="btn btn-primary" data-open-contact>Apresentar uma demanda</button>
-          <a href="#clientes" class="btn btn-ghost">Falar com a equipe</a>
+          <a href="#clientes" class="btn btn-boxed">Falar com a equipe</a>
         </div>
       </div>
-      <div class="hero-institutional-portrait">
+      <div class="hero-editorial-media">
         <picture>
           <source media="(max-width: 767px)" srcset="../shared-assets/edgar/edgar-editorial-profile-warm-mobile.webp" type="image/webp">
           <source srcset="../shared-assets/edgar/edgar-editorial-profile-warm-desktop.webp" type="image/webp">
-          <img src="../shared-assets/edgar/edgar-editorial-profile-warm-desktop.jpg" alt="Edgar Mondadori, direção da Mondadori Advocacia, retrato editorial" width="1400" height="2489" loading="lazy">
+          <img src="../shared-assets/edgar/edgar-editorial-profile-warm-desktop.jpg" alt="Edgar Mondadori, direção da Mondadori Advocacia, retrato editorial" fetchpriority="high">
         </picture>
+        <span class="hero-edge-label">Mondadori · Governança Jurídica</span>
+        <div class="hero-identity-card">
+          <span class="name">Edgar Mondadori</span>
+          <span class="role">Direção</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. PARA QUEM ATUAMOS -->
-  <section class="section" id="clientes">
+  <!-- 02. CARTA INSTITUCIONAL (pull-quote com marca 99) -->
+  <section class="section" data-reveal>
+    <div class="container quote-block">
+      <span class="quote-mark" aria-hidden="true">"</span>
+      <p>Um escritório não é uma pessoa. É uma estrutura que continua.</p>
+      <span class="attribution">Carta Institucional · Mondadori Advocacia</span>
+    </div>
+  </section>
+
+  <!-- 03. PARA QUEM ATUAMOS -->
+  <section class="section section-alt" id="clientes">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Perfil de Clientes</span>
+      <div class="section-head" data-reveal>
+        <div class="section-number"><span class="num">03</span><span class="label">Perfil de Clientes</span></div>
         <h2 class="headline-md">Estruturação e defesa para quem movimenta a economia.</h2>
       </div>
-      <div class="bento-grid reveal">
-        <div class="card bento-half">
-          <div><span class="icon">&#9670;</span><h3>Líderes Corporativos</h3><p>CEOs, diretores e conselhos de administração que necessitam de respaldo jurídico para decisões críticas e operações societárias.</p></div>
-        </div>
-        <div class="card bento-half">
-          <div><span class="icon">&#9670;</span><h3>Produtores e Agronegócio</h3><p>Soluções jurídicas para o campo: contratos agrários, sucessão rural e proteção do patrimônio familiar e empresarial.</p></div>
-        </div>
-        <div class="card bento-wide">
-          <div><span class="icon">&#9670;</span><h3>Investidores e Holdings</h3><p>Estruturação jurídica para proteção patrimonial, constituição de holdings e segurança em aportes financeiros - uma frente que conecta o direito empresarial ao planejamento patrimonial de longo prazo.</p></div>
-        </div>
+      <div class="card-grid" data-reveal>
+        <div class="paper-card"><span class="icon">&#9670;</span><h3>Líderes Corporativos</h3><p>CEOs, diretores e conselhos de administração que necessitam de respaldo jurídico para decisões críticas e operações societárias.</p></div>
+        <div class="paper-card"><span class="icon">&#9670;</span><h3>Produtores e Agronegócio</h3><p>Soluções jurídicas para o campo: contratos agrários, sucessão rural e proteção do patrimônio familiar e empresarial.</p></div>
+        <div class="paper-card"><span class="icon">&#9670;</span><h3>Investidores e Holdings</h3><p>Estruturação jurídica para proteção patrimonial, constituição de holdings e segurança em aportes financeiros.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- 3. AREAS DE ATUACAO (lista, deliberadamente diferente do bento da Pagina A) -->
-  <section class="section section-alt" id="areas">
-    <div class="container two-col-asymmetric">
-      <div class="reveal">
-        <span class="eyebrow">Áreas de Atuação</span>
-        <h2 class="headline-md mt-sm">Expertise técnica com visão de negócios.</h2>
-        <hr class="decision-line mt-md">
-        <p class="text-muted mt-md">Estrutura inicial de atuação. Áreas em processo de validação com o cliente antes da versão final.</p>
-      </div>
-      <div class="area-list reveal">
-        <div class="area-row"><h3>Corporate e Societário</h3><span class="tag">Consultivo</span></div>
-        <div class="area-row"><h3>Direito do Agronegócio</h3><span class="tag">Consultivo</span></div>
-        <div class="area-row"><h3>Patrimônio e Sucessão</h3><span class="tag">Preventivo</span></div>
-        <div class="area-row"><h3>Contencioso Estratégico</h3><span class="tag">Contencioso</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. AGRO, NEGOCIOS E PATRIMONIO (bento assimetrico) -->
-  <section class="section" id="agro">
+  <!-- 04. AREAS DE ATUACAO (grid assimetrico 12 col, 1 card destaque preenchido) -->
+  <section class="section" id="areas">
     <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Agro, Negócios e Patrimônio</span>
+      <div class="section-head" data-reveal>
+        <div class="section-number"><span class="num">04</span><span class="label">Áreas de Atuação</span></div>
+        <h2 class="headline-md">Expertise técnica com visão de negócios.<span class="eyebrow-note">(estrutura inicial, em validação com o cliente)</span></h2>
+      </div>
+      <div class="asym-grid" data-reveal>
+        <div class="asym-item spotlight span-7">
+          <span class="eyebrow">Destaque</span>
+          <h3 class="mt-xs">Governança Corporativa e Societária</h3>
+          <p>Estruturação de conselhos, acordos de sócios e políticas de compliance - a frente que mais conecta direito e continuidade do negócio.</p>
+        </div>
+        <div class="asym-item span-5"><h3>Direito do Agronegócio</h3><p>Contratos agrários e regularização fundiária.</p></div>
+        <div class="asym-item span-6"><h3>Patrimônio e Sucessão</h3><p>Planejamento sucessório para famílias empresárias.</p></div>
+        <div class="asym-item span-6"><h3>Contencioso Estratégico</h3><p>Atuação assertiva em disputas de alta complexidade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. GOVERNANCA E CONTINUIDADE (secao exclusiva, retrato emoldurado) -->
+  <section class="section section-alt" id="governanca">
+    <div class="container two-col-asym">
+      <div class="framed-portrait" data-reveal>
+        <picture>
+          <source media="(max-width: 767px)" srcset="../shared-assets/edgar/edgar-hero-authority-bw-mobile.webp" type="image/webp">
+          <source srcset="../shared-assets/edgar/edgar-hero-authority-bw-desktop.webp" type="image/webp">
+          <img src="../shared-assets/edgar/edgar-hero-authority-bw-desktop.jpg" alt="Edgar Mondadori, registro editorial em preto e branco" loading="lazy">
+        </picture>
+      </div>
+      <div data-reveal>
+        <div class="section-number"><span class="num">05</span><span class="label">Governança e Continuidade</span></div>
+        <p class="body-lg lede-italic">A atuação da Mondadori Advocacia é pensada para durar além de qualquer caso individual.</p>
+        <p class="body-lg mt-md">Processos documentados, método replicável e acompanhamento contínuo contribuem para que a estratégia jurídica de um cliente não dependa de uma única pessoa. Essa é a diferença entre contratar um advogado e contratar uma estrutura de inteligência jurídica.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. METODO DE ATENDIMENTO (timeline horizontal com linha conectora) -->
+  <section class="section" id="metodo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div class="section-number"><span class="num">06</span><span class="label">Método de Trabalho</span></div>
+        <h2 class="headline-md">Um processo estruturado, do diagnóstico à execução.</h2>
+      </div>
+      <div class="process-line" data-reveal>
+        <div class="process-step"><span class="step-label">Etapa 01</span><h4>Imersão no Negócio</h4><p>Compreensão do modelo de negócio antes de qualquer recomendação jurídica.</p></div>
+        <div class="process-step"><span class="step-label">Etapa 02</span><h4>Estruturação Jurídica</h4><p>Construção de contratos e estruturas alinhadas à realidade da operação.</p></div>
+        <div class="process-step"><span class="step-label">Etapa 03</span><h4>Acompanhamento Contínuo</h4><p>Revisão periódica conforme o negócio evolui.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. AGRO, NEGOCIOS E PATRIMONIO -->
+  <section class="section section-alt" id="agro">
+    <div class="container two-col">
+      <div data-reveal>
+        <div class="section-number"><span class="num">07</span><span class="label">Agro, Negócios e Patrimônio</span></div>
         <h2 class="headline-md">Três frentes, uma mesma estratégia de proteção.</h2>
       </div>
-      <div class="bento-grid reveal">
-        <div class="card bento-wide">
-          <div><span class="icon">&#9670;</span><h3>Agronegócio</h3><p>Contratos de produção, regularização fundiária e estruturação jurídica de operações rurais - a frente mais próxima da AgroMonda.</p></div>
-        </div>
-        <div class="card bento-narrow">
-          <div><span class="icon">&#9670;</span><h3>Negócios</h3><p>Governança societária e contratos empresariais.</p></div>
-        </div>
-        <div class="card bento-narrow">
-          <div><span class="icon">&#9670;</span><h3>Patrimônio</h3><p>Planejamento sucessório e proteção patrimonial familiar.</p></div>
-        </div>
+      <div data-reveal>
+        <p class="body-lg"><strong class="text-petrol">Agronegócio</strong> - contratos de produção, regularização fundiária e estruturação jurídica de operações rurais, a frente mais próxima da AgroMonda.</p>
+        <p class="body-lg mt-md"><strong class="text-petrol">Negócios</strong> - governança societária e contratos empresariais.</p>
+        <p class="body-lg mt-md"><strong class="text-petrol">Patrimônio</strong> - planejamento sucessório e proteção patrimonial familiar.</p>
       </div>
     </div>
   </section>
 
-  <!-- 5. METODO DE TRABALHO -->
-  <section class="section section-alt texture-linen" id="metodo">
-    <div class="container">
-      <div class="section-head reveal">
-        <span class="eyebrow">Método de Trabalho</span>
-        <h2 class="headline-md">Um processo estruturado, do diagnóstico à execução.</h2>
-        <hr class="decision-line mt-md">
-      </div>
-      <div class="method-steps reveal">
-        <div class="method-step">
-          <span class="num">01</span>
-          <div><h4>Imersão no Negócio</h4><p>Compreensão do modelo de negócio e do cenário antes de qualquer recomendação jurídica.</p></div>
-        </div>
-        <div class="method-step">
-          <span class="num">02</span>
-          <div><h4>Estruturação Jurídica</h4><p>Construção de contratos e estruturas societárias alinhadas à realidade da operação.</p></div>
-        </div>
-        <div class="method-step">
-          <span class="num">03</span>
-          <div><h4>Acompanhamento Contínuo</h4><p>Revisão periódica e ajuste da estratégia jurídica conforme o negócio evolui.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. GOVERNANCA E CONTINUIDADE (secao exclusiva desta pagina) -->
-  <section class="section" id="governanca">
-    <div class="container two-col reveal">
+  <!-- 08. CONTEUDO INSTITUCIONAL -->
+  <section class="section" id="conteudo">
+    <div class="container two-col-asym" data-reveal>
       <div>
-        <span class="eyebrow">Governança e Continuidade</span>
-        <p class="pull-quote mt-md">Um escritório não é uma pessoa. É uma estrutura que continua.</p>
+        <div class="section-number"><span class="num">08</span><span class="label">Conteúdos Jurídicos</span></div>
+        <h2 class="headline-md">Informação institucional sobre direito empresarial e agro.</h2>
+        <p class="body-lg mt-md">Conteúdos informativos sobre governança, contratos e prevenção jurídica, publicados de forma institucional.</p>
       </div>
-      <div>
-        <p class="body-lg">A atuação da Mondadori Advocacia é pensada para durar além de qualquer caso individual: processos documentados, método replicável e acompanhamento contínuo contribuem para que a estratégia jurídica de um cliente não dependa de uma única pessoa.</p>
-        <p class="body-lg mt-md">Essa é a diferença entre contratar um advogado e contratar uma estrutura de inteligência jurídica.</p>
-      </div>
+      <a href="https://www.instagram.com/edgarmondadori/" target="_blank" rel="noopener noreferrer" class="card-row">
+        <span class="icon-inline">&#9670;</span>
+        <div><h3>Instagram</h3><p>@edgarmondadori: conteúdos institucionais sobre atuação e método.</p></div>
+      </a>
     </div>
   </section>
 
-  <!-- 7. CONTEUDOS JURIDICOS -->
-  <section class="section section-alt" id="conteudo">
-    <div class="container reveal">
-      <div class="two-col-asymmetric">
-        <div>
-          <span class="eyebrow">Conteúdos Jurídicos</span>
-          <h2 class="headline-md mt-sm">Informação institucional sobre direito empresarial e agro.</h2>
-          <p class="body-lg mt-md">Conteúdos informativos sobre governança, contratos e prevenção jurídica, publicados de forma institucional.</p>
+  <!-- 09. CTA DISCRETO -->
+  <section class="section section-alt" id="contato">
+    <div class="container" data-reveal>
+      <div class="cta-boxed">
+        <span class="icon" aria-hidden="true">&#128274;</span>
+        <div class="section-number justify-center"><span class="num">09</span><span class="label">Contato</span></div>
+        <h2 class="headline-md">Apresentar uma Demanda</h2>
+        <p class="body-lg mt-sm">Para falar com a equipe ou apresentar uma demanda, utilize o canal abaixo.</p>
+        <div class="mt-lg cta-actions-row">
+          <button type="button" class="btn btn-primary" data-open-contact>Apresentar uma demanda</button>
+          <a href="../modelo-a-autoridade/index.html" class="btn btn-boxed">Conhecer Edgar Mondadori</a>
         </div>
-        <a href="https://www.instagram.com/edgarmondadori/" target="_blank" rel="noopener noreferrer" class="card card-row">
-          <span class="icon icon-inline">&#9670;</span>
-          <div>
-            <h3>Instagram</h3>
-            <p>@edgarmondadori: conteúdos institucionais sobre atuação e método.</p>
-          </div>
-        </a>
+        <p class="disclaimer">Atuação em conformidade com as normas de publicidade da OAB. Não garantimos resultados.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- 8. CONTATO -->
-  <section class="cta-section" id="contato">
-    <div class="container cta-inner reveal">
-      <span class="icon" aria-hidden="true">&#128274;</span>
-      <h2 class="headline-md">Apresentar uma Demanda</h2>
-      <p class="body-lg">Para falar com a equipe ou apresentar uma demanda, utilize o canal abaixo.</p>
-      <div class="hero-ctas text-center mt-lg justify-center">
-        <button type="button" class="btn btn-primary" data-open-contact>Apresentar uma demanda</button>
-        <a href="../modelo-a-autoridade/index.html" class="btn btn-ghost">Conhecer Edgar Mondadori</a>
-      </div>
-      <p class="disclaimer">Atuação em conformidade com as normas de publicidade da OAB. Não garantimos resultados.</p>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="monogram-watermark" aria-hidden="true">
-    <svg viewBox="0 0 40 40" fill="none"><path d="M5 32V8L20 24L35 8V32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </div>
-  <div class="container footer-grid z-above">
+  <div class="container footer-grid">
     <div>
       <div class="footer-brand">
-        <span class="monogram" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><path d="M5 32V8L20 24L35 8V32" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="monogram" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 40 40" fill="none"><path d="M5 32V8L20 24L35 8V32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         Mondadori
       </div>
       <p class="max-w-sm">Inteligência jurídica focada em resultados empresariais e proteção patrimonial.</p>
@@ -239,13 +228,12 @@
       <button type="button" class="link-plain" data-open-contact>Apresentar uma demanda</button>
     </div>
   </div>
-  <div class="container footer-bottom z-above">
+  <div class="container footer-bottom">
     <p>© 2026 Mondadori Advocacia.</p>
     <p class="footer-oab-discrete">Registro profissional: a confirmar com o cliente. Comunicação institucional, sem promessa de resultado.</p>
   </div>
 </footer>
 
-<!-- MODAL DE CONTATO -->
 <div class="modal-overlay" id="contact-modal">
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <button class="modal-close" data-close-contact aria-label="Fechar">&times;</button>
@@ -255,14 +243,8 @@
     </div>
     <p class="modal-sub">Se preferir, prepare sua mensagem abaixo antes de enviá-la pelo Instagram.</p>
     <form id="contact-form">
-      <div class="field">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" required>
-      </div>
-      <div class="field">
-        <label for="telefone">Telefone / WhatsApp</label>
-        <input type="tel" id="telefone" name="telefone" required>
-      </div>
+      <div class="field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" required></div>
+      <div class="field"><label for="telefone">Telefone / WhatsApp</label><input type="tel" id="telefone" name="telefone" required></div>
       <div class="field">
         <label for="tipo">Tipo de demanda</label>
         <select id="tipo" name="tipo" required>
@@ -273,10 +255,7 @@
           <option value="Outro">Outro</option>
         </select>
       </div>
-      <div class="field">
-        <label for="mensagem">Mensagem breve</label>
-        <textarea id="mensagem" name="mensagem" required></textarea>
-      </div>
+      <div class="field"><label for="mensagem">Mensagem breve</label><textarea id="mensagem" name="mensagem" required></textarea></div>
       <div class="modal-actions">
         <a href="https://www.instagram.com/edgarmondadori/" data-instagram-link class="btn btn-primary" target="_blank" rel="noopener noreferrer">Abrir Instagram para enviar</a>
       </div>
@@ -285,6 +264,6 @@
   </div>
 </div>
 
-<script src="../shared-assets/site.js"></script>
+<script src="../shared-assets/site-b.js"></script>
 </body>
 </html>

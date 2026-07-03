@@ -2,8 +2,8 @@ const { test, expect } = require('@playwright/test');
 const path = require('path');
 
 const PAGES = [
-  { name: 'Pagina A - Autoridade', file: 'modelo-a-autoridade/index.html', minSections: 9 },
-  { name: 'Pagina B - Inteligencia Juridica', file: 'modelo-b-inteligencia-juridica/index.html', minSections: 8 },
+  { name: 'Pagina A - Autoridade', file: 'modelo-a-autoridade/index.html', minSections: 9, hasHeroVideo: true },
+  { name: 'Pagina B - Inteligencia Juridica', file: 'modelo-b-inteligencia-juridica/index.html', minSections: 8, hasHeroVideo: false },
 ];
 
 const VIEWPORTS = [
@@ -92,7 +92,7 @@ for (const pageDef of PAGES) {
         imgs.filter((img) => /aeronave/i.test(img.src)).map((img) => img.src)
       );
       expect(aeronaveImgs, 'imagem de aeronave encontrada: ' + aeronaveImgs.join(' | ')).toHaveLength(0);
-      const heroImg = await page.locator('.hero img, .hero-institutional img').first();
+      const heroImg = await page.locator('.hero-cinematic img, .hero-cinematic video, .hero-editorial img').first();
       const heroSrc = await heroImg.getAttribute('src').catch(() => null);
       if (heroSrc) expect(heroSrc, 'hero nao pode ser a foto de aeronave').not.toMatch(/aeronave/i);
     });
@@ -102,11 +102,12 @@ for (const pageDef of PAGES) {
       const discreteText = await page.locator('.footer-oab-discrete').innerText();
       expect(discreteText.toLowerCase()).toContain('a confirmar');
       // nao pode aparecer fora do rodape discreto (ex: hero, cta, nav)
-      const heroText = await page.locator('.hero, .hero-institutional').innerText().catch(() => '');
+      const heroText = await page.locator('.hero-cinematic, .hero-editorial').innerText().catch(() => '');
       expect(heroText.toLowerCase()).not.toContain('a confirmar');
     });
 
     test('3/5/6. video de hero: sem controles, carrega source correta, sem erros', async ({ page }) => {
+      test.skip(!pageDef.hasHeroVideo, 'este modelo nao usa video de hero por design (hero fotografico editorial)');
       const consoleErrors = [];
       page.on('console', (msg) => { if (msg.type() === 'error') consoleErrors.push(msg.text()); });
       await page.setViewportSize({ width: 1440, height: 900 });
@@ -128,6 +129,7 @@ for (const pageDef of PAGES) {
     });
 
     test('4/9. video de hero tem fallback (poster/layer) e nao carrega source com prefers-reduced-motion', async ({ browser }) => {
+      test.skip(!pageDef.hasHeroVideo, 'este modelo nao usa video de hero por design (hero fotografico editorial)');
       const context = await browser.newContext({ reducedMotion: 'reduce' });
       const page = await context.newPage();
       await page.setViewportSize({ width: 1440, height: 900 });
@@ -142,6 +144,7 @@ for (const pageDef of PAGES) {
     });
 
     test('mobile: video de hero usa a fonte mobile otimizada', async ({ page }) => {
+      test.skip(!pageDef.hasHeroVideo, 'este modelo nao usa video de hero por design (hero fotografico editorial)');
       await page.setViewportSize({ width: 390, height: 844 });
       await page.goto(fileUrl(pageDef.file));
       await page.waitForLoadState('networkidle');
@@ -223,9 +226,10 @@ for (const pageDef of PAGES) {
       const page = await context.newPage();
       await page.goto(fileUrl(pageDef.file));
       await page.waitForTimeout(300);
-      const revealOpacities = await page.$$eval('.reveal', (els) => els.map((el) => getComputedStyle(el).opacity));
+      const revealOpacities = await page.$$eval('.reveal, [data-reveal]', (els) => els.map((el) => getComputedStyle(el).opacity));
+      expect(revealOpacities.length, 'nenhum elemento de reveal encontrado nesta pagina').toBeGreaterThan(0);
       for (const op of revealOpacities) {
-        expect(parseFloat(op), 'secao .reveal deveria estar visivel com reduced motion').toBeGreaterThan(0.9);
+        expect(parseFloat(op), 'secao de reveal deveria estar visivel com reduced motion').toBeGreaterThan(0.9);
       }
       await context.close();
     });
