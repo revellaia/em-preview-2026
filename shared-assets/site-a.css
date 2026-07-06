@@ -83,6 +83,8 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
 .nav-logo { display: flex; align-items: center; gap: var(--space-sm); font-family: var(--font-display); font-size: 1.125rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-surface); }
 .nav-logo:hover { color: var(--refined-gold); }
 .monogram { display: inline-flex; color: var(--refined-gold); }
+.monogram img { height: 24px; width: auto; }
+.footer-brand .monogram img { height: 18px; }
 .nav-links { display: none; align-items: center; gap: 32px; }
 @media (min-width: 900px) { .nav-links { display: flex; } }
 .nav-links a { font-size: 12px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--on-surface-variant); padding-bottom: 4px; border-bottom: 1px solid transparent; transition: color var(--motion-fast) ease, border-color var(--motion-fast) ease; }
@@ -202,6 +204,7 @@ main { padding-top: 73px; }
 .panel-row { display: flex; flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); background: var(--bg-container); border: 1px solid var(--outline); padding: var(--space-lg); }
 .inline-group { display: flex; align-items: center; gap: var(--space-md); }
 .monogram-seal { width: 56px; height: 56px; border: 1px solid var(--outline); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--refined-gold); flex-shrink: 0; }
+.monogram-seal img { height: 26px; width: auto; }
 
 .cta-section { text-align: center; padding: var(--space-2xl) 0; border-top: 1px solid var(--outline-soft); background: var(--bg-lowest); }
 .cta-inner { max-width: 640px; margin: 0 auto; }
