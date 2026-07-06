@@ -80,8 +80,10 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; margin: 0; colo
   max-width: var(--container-max); margin: 0 auto; padding-left: var(--margin-mobile); padding-right: var(--margin-mobile);
 }
 @media (min-width: 1024px) { .nav-inner { padding-left: var(--margin-desktop); padding-right: var(--margin-desktop); } }
-.nav-logo { display: flex; align-items: center; gap: var(--space-sm); font-family: var(--font-display); font-size: 1.125rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--on-surface); }
-.nav-logo:hover { color: var(--refined-gold); }
+.nav-logo { display: flex; align-items: center; }
+.nav-logo-mark { height: 34px; width: auto; transition: opacity var(--motion-fast) ease; }
+.nav-logo:hover .nav-logo-mark { opacity: 0.8; }
+@media (max-width: 480px) { .nav-logo-mark { height: 28px; } }
 .monogram { display: inline-flex; color: var(--refined-gold); }
 .monogram img { height: 24px; width: auto; }
 .footer-brand .monogram img { height: 18px; }
@@ -219,7 +221,16 @@ footer { background: var(--bg-lowest); border-top: 1px solid var(--outline-soft)
 .footer-col a:hover, .footer-col button.link-plain:hover { color: var(--silver-leaf); }
 .footer-bottom { margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--outline-soft); display: flex; flex-direction: column; gap: var(--space-xs); font-size: 0.8rem; color: var(--on-surface-variant); }
 @media (min-width: 768px) { .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; } }
+.footer-group { margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--outline-soft); text-align: center; }
+.footer-group-label { display: block; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--on-surface-variant); margin-bottom: var(--space-md); }
+.footer-group-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-xl); }
+.footer-group-logos img { height: 26px; width: auto; opacity: 0.82; transition: opacity var(--motion-fast) ease; }
+.footer-group-logos img:hover { opacity: 1; }
 .footer-oab-discrete { font-size: 10px; letter-spacing: 0.04em; color: rgba(226,232,240,0.32); max-width: 26rem; }
+.footer-credit { display: flex; align-items: center; gap: var(--space-xs); text-decoration: none; opacity: 0.72; transition: opacity var(--motion-fast) ease; }
+.footer-credit:hover { opacity: 1; }
+.footer-credit span { font-size: 11px; letter-spacing: 0.04em; color: var(--on-surface-variant); white-space: nowrap; }
+.footer-credit img { height: 20px; width: auto; }
 
 /* MODAL */
 .modal-overlay { position: fixed; inset: 0; background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(6px); display: none; align-items: center; justify-content: center; z-index: 200; padding: var(--space-md); }
